@@ -1,20 +1,31 @@
 <x-logout-layout>
     <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '〇〇']) !!}
+{!! Form::open(['url' => 'register']) !!}
 
 <h2>新規ユーザー登録</h2>
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+<!-- エラーメッセージ表示 -->
+@if ($errors->any())
+    <div class="error-massages">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
-{{ Form::label('メールアドレス') }}
-{{ Form::email('email',null,['class' => 'input']) }}
+{{ Form::label('username','ユーザー名') }}
+{{ Form::text('username',old('username'),['class' => 'input']) }}
 
-{{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+{{ Form::label('email','メールアドレス') }}
+{{ Form::email('email',old('email'),['class' => 'input']) }}
 
-{{ Form::label('パスワード確認') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
+{{ Form::label('password','パスワード') }}
+{{ Form::password('password',['class' => 'input']) }}
+
+{{ Form::label('password_confirmation','パスワード確認') }}
+{{ Form::password('password_confirmation',['class' => 'input']) }}
 
 {{ Form::submit('登録') }}
 

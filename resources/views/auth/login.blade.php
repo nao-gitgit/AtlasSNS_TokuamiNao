@@ -1,13 +1,13 @@
 <x-logout-layout>
 
   <!-- 適切なURLを入力してください -->
-  {!! Form::open(['url' => '〇〇']) !!}
+  {!! Form::open(['url' => 'login']) !!}
 
   <p>AtlasSNSへようこそ</p>
 
-  {{ Form::label('email') }}
+  {{ Form::label('email' , 'メールアドレス') }}
   {{ Form::text('email',null,['class' => 'input']) }}
-  {{ Form::label('password') }}
+  {{ Form::label('password' , 'パスワード') }}
   {{ Form::password('password',['class' => 'input']) }}
 
   {{ Form::submit('ログイン') }}

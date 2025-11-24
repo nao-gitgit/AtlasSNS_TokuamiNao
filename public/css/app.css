@@ -3738,6 +3738,20 @@ textarea.input-lg {
   background-color: #fcf8e3
 }
 
+.error-masseages {
+  color: red;
+  background: #ffecec;
+  border: 1px solid #f9f9f9;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.error-masseages ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
 .has-error .checkbox,
 .has-error .checkbox-inline,
 .has-error .control-label,
