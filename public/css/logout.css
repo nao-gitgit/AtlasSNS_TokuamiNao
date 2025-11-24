@@ -1,10 +1,58 @@
 @charset "UTF-8";
 
-html{
+/* 全体を画面いっぱいにして中央寄せ */
+html,
+body {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    height: 100%;
-    background: #186AC9;
+/* 背景のグラデーション */
+body {
+    background: linear-gradient(to bottom, #1870d5, #e4de5c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+/* 中央のカード部分 */
+.logout-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 40px 50px;
+    width: 350px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+}
+
+/* ログイン・登録フォームの入力欄 */
+.logout-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+    border-radius: 6px;
+    border: none;
+}
+
+/* ボタン */
+.logout-container button,
+.logout-container input[type="submit"] {
+    background: #e55353;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.logout-container a {
+    color: white;
+    text-decoration: underline;
+    font-size: 14px;
 }

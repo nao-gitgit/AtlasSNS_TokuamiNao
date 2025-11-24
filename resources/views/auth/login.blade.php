@@ -1,6 +1,6 @@
 <x-logout-layout>
 
-  <!-- 適切なURLを入力してください -->
+<div class="logout-container">
   {!! Form::open(['url' => 'login']) !!}
 
   <p>AtlasSNSへようこそ</p>
@@ -15,5 +15,6 @@
   <p><a href="register">新規ユーザーの方はこちら</a></p>
 
   {!! Form::close() !!}
+</div>
 
 </x-logout-layout>

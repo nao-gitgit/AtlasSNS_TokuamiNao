@@ -1,5 +1,6 @@
 <x-logout-layout>
-    <!-- 適切なURLを入力してください -->
+
+<div class="logout-container">
 {!! Form::open(['url' => 'register']) !!}
 
 <h2>新規ユーザー登録</h2>
@@ -32,6 +33,6 @@
 <p><a href="login">ログイン画面へ戻る</a></p>
 
 {!! Form::close() !!}
-
+</div>
 
 </x-logout-layout>
