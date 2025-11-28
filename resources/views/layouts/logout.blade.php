@@ -7,7 +7,7 @@
         <meta name="description" content="ページの内容を表す文章" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title></title>
+        <title>AtlasSNS</title>
 
         <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -32,7 +32,6 @@
         </header>
 
         <!-- フォームのカード部分 -->
-    <div class="logout-wrapper">
         <div class="logout-container">
             {{ $slot }}
         </div>

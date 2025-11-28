@@ -1,12 +1,12 @@
 <x-logout-layout>
 
-<div class="logout-container">
   {!! Form::open(['url' => 'login']) !!}
 
-  <p>AtlasSNSへようこそ</p>
+  <h3>AtlasSNSへようこそ</h3>
 
   {{ Form::label('email' , 'メールアドレス') }}
   {{ Form::text('email',null,['class' => 'input']) }}
+
   {{ Form::label('password' , 'パスワード') }}
   {{ Form::password('password',['class' => 'input']) }}
 
@@ -15,6 +15,5 @@
   <p><a href="register">新規ユーザーの方はこちら</a></p>
 
   {!! Form::close() !!}
-</div>
 
 </x-logout-layout>

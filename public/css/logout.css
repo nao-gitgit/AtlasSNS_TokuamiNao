@@ -12,17 +12,37 @@ body {
 body {
     background: linear-gradient(to bottom, #1870d5, #e4de5c);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     font-family: sans-serif;
 }
 
+/* AtlasSNSの画像と文字タイトル */
+.logout-header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.logout-header .logo {
+    width: 200px;
+}
+
+.logout-header .subtitle {
+    font-size: 24px;
+    color: white;
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
 /* 中央のカード部分 */
 .logout-container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
     padding: 40px 50px;
-    width: 350px;
+    width: 380px;
+    margin-top: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     color: white;
     text-align: center;
@@ -31,9 +51,9 @@ body {
 /* ログイン・登録フォームの入力欄 */
 .logout-container input {
     width: 100%;
-    padding: 10px;
-    margin: 12px 0;
-    border-radius: 6px;
+    padding: 12px;
+    margin: 14px 0;
+    border-radius: 8px;
     border: none;
 }
 
@@ -43,12 +63,12 @@ body {
     background: #e55353;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12x;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .logout-container a {
