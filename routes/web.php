@@ -20,11 +20,11 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
-Route::get('top', [PostsController::class, 'index']);
+Route::get('posts/index', [PostsController::class, 'index'])->name('home');
 
-Route::get('profile', [ProfileController::class, 'profile']);
+Route::get('users/profile', [ProfileController::class, 'profile'])->name('profile');
 
-Route::get('search', [UsersController::class, 'index']);
+Route::post('users/search', [UsersController::class, 'index'])->name('search');
 
-Route::get('follow-list', [PostsController::class, 'index']);
-Route::get('follower-list', [PostsController::class, 'index']);
+Route::get('follows/followlist', [PostsController::class, 'index']);
+Route::get('follows/followerlist', [PostsController::class, 'index']);
