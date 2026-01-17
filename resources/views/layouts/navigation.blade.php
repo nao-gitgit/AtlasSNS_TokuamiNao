@@ -7,8 +7,10 @@ a<div id="head">
     <!--ユーザーメニュー-->
     <div class="user-menu-area">
 
-            <!--ユーザー名を表示-->
+            <!--ログイン時のみユーザー名を表示-->
+            @auth
             <p class="username">{{ Auth::user()->username }}さん</p>
+            @endauth
 
             <!--矢印ボタンを設置-->
             <button id="menu-toggle" class="arrow-btn">

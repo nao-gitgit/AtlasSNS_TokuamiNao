@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
-Route::get('posts/index', [PostsController::class, 'index'])->name('home');
+Route::get('posts/index', [PostsController::class, 'index'])->name('home')->middleware('auth');
 
 Route::get('users/profile', [ProfileController::class, 'profile'])->name('profile');
 
