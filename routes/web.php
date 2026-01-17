@@ -34,3 +34,5 @@ Route::get('follows/followlist', [FollowsController::class, 'followList']);
 Route::get('follows/followerlist', [FollowsController::class, 'followerList']);
 
 Route::get('users/search', [UsersController::class, 'search'])->middleware('auth');
+
+Route::post('posts/store', [PostsController::class, 'store'])->name('post.store')->middleware('auth');
