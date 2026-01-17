@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FollowsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,8 @@ Route::post('users/search', [UsersController::class, 'index'])->name('search');
 
 Route::get('follows/followlist', [PostsController::class, 'index']);
 Route::get('follows/followerlist', [PostsController::class, 'index']);
+
+Route::get('follows/followlist', [FollowsController::class, 'followList']);
+Route::get('follows/followerlist', [FollowsController::class, 'followerList']);
+
+Route::get('users/search', [UsersController::class, 'search'])->middleware('auth');
