@@ -36,3 +36,7 @@ Route::get('follows/followerlist', [FollowsController::class, 'followerList']);
 Route::get('users/search', [UsersController::class, 'search'])->middleware('auth');
 
 Route::post('posts/store', [PostsController::class, 'store'])->name('post.store')->middleware('auth');
+
+Route::post('posts/update', [PostsController::class, 'update'])->name('post.update')->middleware('auth');
+
+Route::post('/post/delete', [PostsController::class, 'destroy'])->name('post.delete');

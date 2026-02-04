@@ -2,21 +2,19 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Follow;
+use App\Models\Post;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
+     * 一括代入を許可する属性
      */
     protected $fillable = [
         'username',
@@ -25,24 +23,44 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
+     * シリアライズ時に隠す属性
      */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    //自分がフォローしている人たち
-    public function follows()
+    /**
+     * 自分の投稿
+     */
+    public function posts()
     {
-        return $this->hasMany(Follow::class, 'following_id');
+        return $this->hasMany(Post::class);
     }
 
-    //自分をフォローしている人たち
+    /**
+     * 自分がフォローしている人（中間テーブル：follows）
+     */
+    public function follows()
+    {
+        return $this->belongsToMany(
+            User::class,
+            'follows',
+            'following_id',
+            'followed_id'
+        );
+    }
+
+    /**
+     * 自分をフォローしている人
+     */
     public function followers()
     {
-        return $this->hasMany(Follow::class, 'followed_id');
+        return $this->belongsToMany(
+            User::class,
+            'follows',
+            'followed_id',
+            'following_id'
+        );
     }
 }
