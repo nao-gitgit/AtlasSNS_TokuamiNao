@@ -1,7 +1,7 @@
 <x-login-layout>
 
     <div class="search-area">
-        <form action="{{ url('users/search') }}" method="GET">
+        <form action="{{ url('users/search') }}" method="GET" class="search-form">
 
             <input
                 type="text"
