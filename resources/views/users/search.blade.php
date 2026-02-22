@@ -1,6 +1,6 @@
 <x-login-layout>
 
-    {{-- 検索エリア --}}
+    <!-- 検索エリア -->
     <div class="search-area">
         <form action="{{ url('users/search') }}" method="GET" class="search-form">
 
@@ -18,7 +18,7 @@
 
         </form>
 
-        {{-- 検索ワード右側表示 --}}
+        <!-- 検索ワード右側表示 -->
         @if(!empty($keyword))
             <div class="search-word">
                 検索ワード：{{ $keyword }}
@@ -27,7 +27,10 @@
     </div>
 
 
-    {{-- ユーザー一覧 --}}
+    <!-- 区切り線 -->
+    <div class="divider"></div>
+
+    <!-- ユーザー一覧 -->
     <div class="user-list">
         @foreach ($users as $user)
             <div class="user-item">

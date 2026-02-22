@@ -29,6 +29,9 @@
         </form>
     </div>
 
+    <!-- 区切り線 -->
+    <div class="divider"></div>
+
     <!-- 投稿一覧 -->
     @foreach ($posts as $post)
 <div class="post">

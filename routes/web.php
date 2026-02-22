@@ -43,3 +43,5 @@ Route::post('/post/delete', [PostsController::class, 'destroy'])->name('post.del
 
 Route::post('/follow/{id}', [FollowsController::class, 'follow'])->name('follow');
 Route::post('/unfollow/{id}', [FollowsController::class, 'unfollow'])->name('unfollow');
+
+Route::get('/profile/{id}', [UsersController::class, 'show'])->name('profile.show');

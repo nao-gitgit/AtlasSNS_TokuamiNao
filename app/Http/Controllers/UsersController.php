@@ -29,4 +29,12 @@ class UsersController extends Controller
 
         return view('users.search', compact('users', 'keyword'));
     }
+
+    // ユーザーのプロフィールページ
+    public function show($id)
+{
+    $user = User::findOrFail($id);
+
+    return view('users.profile', compact('user'));
+}
 }

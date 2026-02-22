@@ -46,9 +46,18 @@ header {
 
 .post {
     display: flex;
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
+    padding: 20px 30px;
     position: relative;
+}
+
+.post::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -30px;
+    right: -30px;
+    height: 1px;
+    background-color: #ccc;
 }
 
 .post-user-icon {
@@ -264,4 +273,42 @@ header {
     padding: 8px 20px;
     border-radius: 8px;
     border: none;
+}
+
+/* 全体余白 */
+.follow-wrapper {
+    padding: 30px;
+}
+
+/* タイトル＋アイコン横並び */
+.follow-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* タイトル */
+.follow-title {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+/* アイコンエリア */
+.follow-icon-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* アイコン */
+.follow-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* ===== 共通区切り線 ===== */
+.divider {
+    margin: 25px -30px;
+    border-bottom: 7px solid #dcdcdc;
 }
