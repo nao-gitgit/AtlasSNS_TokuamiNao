@@ -7,7 +7,10 @@
 
             <div class="post-area">
                 <!-- ユーザーアイコン -->
-                <img src="{{ asset('images/icon1.png') }}" class="user-icon">
+                <a href="{{ route('profile', Auth::id()) }}">
+                <img src="{{ asset('storage/' . Auth::user()->icon_image) }}"
+                   class="post-user-icon">
+                </a>
 
                 <!-- 投稿入力欄 -->
                 <textarea
@@ -36,7 +39,10 @@
     @foreach ($posts as $post)
 <div class="post">
     <!-- アイコン -->
-    <img src="{{ asset('images/icon1.png') }}" class="post-user-icon">
+    <a href="{{ route('profile', $post->user->id) }}">
+    <img src="{{ asset('storage/' . $post->user->icon_image) }}"
+         class="post-user-icon">
+</a>
 
     <div class="post-body">
         <!-- ユーザー名 & 投稿日時 -->

@@ -1,47 +1,94 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FollowsController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
-
-
 
 require __DIR__ . '/auth.php';
 
-Route::get('posts/index', [PostsController::class, 'index'])->name('home')->middleware('auth');
 
-Route::get('users/profile', [ProfileController::class, 'profile'])->name('profile');
+/*
+|--------------------------------------------------------------------------
+| 投稿関連
+|--------------------------------------------------------------------------
+*/
 
-Route::post('users/search', [UsersController::class, 'index'])->name('search');
+// 投稿一覧（ホーム）
+Route::get('posts/index', [PostsController::class, 'index'])
+    ->name('home')
+    ->middleware('auth');
 
-Route::get('follows/followlist', [PostsController::class, 'index']);
-Route::get('follows/followerlist', [PostsController::class, 'index']);
+// 投稿保存
+Route::post('posts/store', [PostsController::class, 'store'])
+    ->name('post.store')
+    ->middleware('auth');
 
-Route::get('follows/followlist', [FollowsController::class, 'followList']);
-Route::get('follows/followerlist', [FollowsController::class, 'followerList']);
+// 投稿更新
+Route::post('posts/update', [PostsController::class, 'update'])
+    ->name('post.update')
+    ->middleware('auth');
 
-Route::get('users/search', [UsersController::class, 'search'])->middleware('auth');
+// 投稿削除
+Route::post('post/delete', [PostsController::class, 'destroy'])
+    ->name('post.delete')
+    ->middleware('auth');
 
-Route::post('posts/store', [PostsController::class, 'store'])->name('post.store')->middleware('auth');
 
-Route::post('posts/update', [PostsController::class, 'update'])->name('post.update')->middleware('auth');
+/*
+|--------------------------------------------------------------------------
+| ユーザー検索
+|--------------------------------------------------------------------------
+*/
 
-Route::post('/post/delete', [PostsController::class, 'destroy'])->name('post.delete');
+// 検索画面表示
+Route::get('users/search', [UsersController::class, 'search'])
+    ->middleware('auth');
 
-Route::post('/follow/{id}', [FollowsController::class, 'follow'])->name('follow');
-Route::post('/unfollow/{id}', [FollowsController::class, 'unfollow'])->name('unfollow');
+// 検索実行
+Route::post('users/search', [UsersController::class, 'index'])
+    ->name('search')
+    ->middleware('auth');
 
-Route::get('/profile/{id}', [UsersController::class, 'show'])->name('profile.show');
+
+/*
+|--------------------------------------------------------------------------
+| フォロー関連
+|--------------------------------------------------------------------------
+*/
+
+// フォローリスト
+Route::get('follows/followlist', [FollowsController::class, 'followList'])
+    ->middleware('auth');
+
+// フォロワーリスト
+Route::get('follows/followerlist', [FollowsController::class, 'followerList'])
+    ->name('followerList')
+    ->middleware('auth');
+
+// フォロー
+Route::post('/follow/{id}', [FollowsController::class, 'follow'])
+    ->name('follow')
+    ->middleware('auth');
+
+// フォロー解除
+Route::post('/unfollow/{id}', [FollowsController::class, 'unfollow'])
+    ->name('unfollow')
+    ->middleware('auth');
+
+
+/*
+|--------------------------------------------------------------------------
+| プロフィール表示
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/profile/{id}', [UsersController::class, 'show'])
+    ->name('profile')
+    ->middleware('auth');

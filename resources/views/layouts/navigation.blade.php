@@ -20,7 +20,7 @@ a<div id="head">
             <!--ドロップダウンメニュー あえてルートはこのままに-->
         <ul id="dropdown-menu" class="dropdown close">
             <li><a href="{{ route('home') }}">HOME</a></li>
-            <li><a href="{{ route('profile') }}">プロフィール編集</a></li>
+            <li><a href="{{ route('profile', Auth::id()) }}">プロフィール編集</a></li>
             <li>
                 <a href="#" id="logout-link">ログアウト</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">

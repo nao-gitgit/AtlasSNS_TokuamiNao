@@ -37,4 +37,15 @@ class UsersController extends Controller
 
     return view('users.profile', compact('user'));
 }
+
+    public function profile($id)
+{
+    $user = \App\Models\User::findOrFail($id);
+
+    $posts = \App\Models\Post::where('user_id', $id)
+                ->orderBy('created_at', 'desc')
+                ->get();
+
+    return view('users.profile', compact('user', 'posts'));
+}
 }

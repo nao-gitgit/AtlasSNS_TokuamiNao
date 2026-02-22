@@ -36,7 +36,11 @@
             <div class="user-item">
 
                 <div class="user-left">
-                    <img src="{{ asset('storage/' . $user->icon_image) }}" alt="アイコン" class="user-icon">
+                    <a href="{{ route('profile', $user->id) }}">
+                    <img src="{{ asset('storage/' . $user->icon_image) }}"
+                       alt="アイコン"
+                       class="user-icon">
+                    </a>
                     <span class="username">{{ $user->username }}</span>
                 </div>
 
