@@ -40,3 +40,6 @@ Route::post('posts/store', [PostsController::class, 'store'])->name('post.store'
 Route::post('posts/update', [PostsController::class, 'update'])->name('post.update')->middleware('auth');
 
 Route::post('/post/delete', [PostsController::class, 'destroy'])->name('post.delete');
+
+Route::post('/follow/{id}', [FollowsController::class, 'follow'])->name('follow');
+Route::post('/unfollow/{id}', [FollowsController::class, 'unfollow'])->name('unfollow');

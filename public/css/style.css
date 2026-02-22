@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-html {}
-
 body {
     font-family:
         -apple-system,
@@ -193,7 +191,77 @@ header {
     height: 35px;
 }
 
+/* =========================
+   検索エリア
+========================= */
+
 .search-area {
-    margin-top: 30px;
-    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-btn {
+    margin-left: 10px;
+}
+
+.search-word {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   ユーザー一覧
+========================= */
+
+.user-list {
+    width: 600px;
+    margin: 40px auto;
+}
+
+.user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.user-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.follow-btn {
+    background-color: #5b9bd5;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+.unfollow-btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
 }

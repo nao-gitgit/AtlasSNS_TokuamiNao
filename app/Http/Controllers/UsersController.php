@@ -3,18 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
-
-    //ユーザー検索画面の表示
-    public function index(){
-        return view('users.search');
+    // ユーザー検索画面の表示（初期表示）
+    public function index(Request $request)
+    {
+        return $this->search($request);
     }
 
-    //ユーザー検索画面の表示
-    public function search(){
-        return view('users.search');
-    }
+    // ユーザー検索処理
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
 
+        $query = User::where('id', '!=', Auth::id());
+
+        if (!empty($keyword)) {
+            $query->where('username', 'like', '%' . $keyword . '%');
+        }
+
+        $users = $query->get();
+
+        return view('users.search', compact('users', 'keyword'));
+    }
 }
