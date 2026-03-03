@@ -35,17 +35,21 @@ class UsersController extends Controller
 {
     $user = User::findOrFail($id);
 
-    return view('users.profile', compact('user'));
-}
-
-    public function profile($id)
-{
-    $user = \App\Models\User::findOrFail($id);
-
     $posts = \App\Models\Post::where('user_id', $id)
                 ->orderBy('created_at', 'desc')
                 ->get();
 
-    return view('users.profile', compact('user', 'posts'));
+    // フォローしているか判定
+    $isFollowing = false;
+
+    if (Auth::check()) {
+        $isFollowing = Auth::user()
+                ->follows()
+                ->where('followed_id', $id)
+                ->exists();
+    }
+
+    return view('profiles.profile', compact('user' , 'posts', 'isFollowing'));
 }
+
 }
