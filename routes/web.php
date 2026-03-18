@@ -65,6 +65,7 @@ Route::post('users/search', [UsersController::class, 'index'])
 
 // フォローリスト
 Route::get('follows/followlist', [FollowsController::class, 'followList'])
+    ->name('followList')
     ->middleware('auth');
 
 // フォロワーリスト
@@ -91,4 +92,14 @@ Route::post('/unfollow/{id}', [FollowsController::class, 'unfollow'])
 
 Route::get('/profile/{id}', [UsersController::class, 'show'])
     ->name('profile')
+    ->middleware('auth');
+
+// プロフィール編集画面表示
+Route::get('/users/edit', [UsersController::class,'edit'])
+    ->name('profile.edit')
+    ->middleware('auth');
+
+// プロフィール更新
+Route::post('/profile/update', [UsersController::class,'update'])
+    ->name('profile.update')
     ->middleware('auth');

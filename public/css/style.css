@@ -382,3 +382,107 @@ header {
     background-color: #f44336;
     color: white;
 }
+
+/* =========================
+   プロフィール編集
+========================= */
+
+.profile-edit-wrapper {
+
+    width: 600px;
+
+    margin: 50px auto;
+
+}
+
+.profile-edit-row {
+
+    display: flex;
+
+    gap: 40px;
+
+    align-items: flex-start;
+
+}
+
+.icon-area {
+
+    width: 120px;
+
+}
+
+.edit-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+}
+
+.edit-form {
+
+    flex: 1;
+
+}
+
+.form-row {
+
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.form-row label {
+
+    width: 150px;
+
+    font-weight: bold;
+
+}
+
+.form-input {
+
+    width: 300px;
+
+    height: 35px;
+
+    padding: 5px;
+
+}
+
+.form-textarea {
+
+    width: 300px;
+
+    height: 80px;
+
+    padding: 5px;
+
+}
+
+.button-area {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+}
+
+.update-btn {
+
+    background: #e74c3c;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 40px;
+
+    border-radius: 5px;
+
+}

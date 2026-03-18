@@ -47,7 +47,7 @@
     </div>
 
     <div class="d-flex justify-content-end mt-2 mb-4">
-      <a href="{{ url('follows/followlist') }}" class="btn btn-primary">
+      <a href="{{ route('followList') }}" class="btn btn-primary">
         フォローリスト
       </a>
     </div>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="d-flex justify-content-end mt-2 mb-3">
-      <a href="{{ url('follows/followerlist') }}" class="btn btn-primary">
+      <a href="{{ route('followerList') }}" class="btn btn-primary">
         フォロワーリスト
       </a>
     </div>
@@ -80,6 +80,6 @@
   <footer>
   </footer>
 
-  <script src="{{ asset('js/app.js') }}"></cript>
+  <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

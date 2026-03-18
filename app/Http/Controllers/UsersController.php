@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class UsersController extends Controller
 {
@@ -50,6 +51,60 @@ class UsersController extends Controller
     }
 
     return view('profiles.profile', compact('user' , 'posts', 'isFollowing'));
+}
+
+    // ユーザーのプロフィール編集
+    public function edit()
+{
+    $user = Auth::user();
+
+    return view('users.profile', compact('user'));
+}
+
+    // バリデーション設定
+    public function update(Request $request)
+{
+    $user = Auth::user();
+
+    $request->validate([
+
+    'username' => 'required|string|min:2|max:12',
+
+    'email' => [
+    'required',
+    'string',
+    'email',
+    'min:5',
+    'max:40',
+
+    Rule::unique('users','email')->ignore($user->id)
+
+    ],
+
+    'password' => 'required|alpha_num|min:8|max:20|confirmed',
+
+    'bio' => 'nullable|max:150',
+
+    'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg'
+
+    ]);
+
+    $user->username = $request->username;
+    $user->email = $request->email;
+    $user->bio = $request->bio;
+
+    if($request->filled('password')){
+    $user->password = bcrypt($request->password);
+    }
+
+    if($request->hasFile('icon_image')){
+    $path = $request->file('icon_image')->store('icons','public');
+    $user->icon_image = $path;
+    }
+
+    $user->save();
+
+    return redirect()->route('home');
 }
 
 }
