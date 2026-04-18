@@ -9,13 +9,21 @@
 
             <!--ログイン時のみユーザー名を表示-->
             @auth
-            <p class="username">{{ Auth::user()->username }}さん</p>
+            <p class="username">{{ Auth::user()->username }}   さん</p>
             @endauth
 
             <!--矢印ボタンを設置-->
             <button id="menu-toggle" class="arrow-btn">
                 <span class="arrow"></span>
             </button>
+
+            <!--ユーザーアイコンを設置-->
+            @auth
+            <img src="{{ Auth::user()->icon_image
+                ? asset('storage/' . Auth::user()->icon_image)
+                : asset('images/default.png') }}"
+            class="header-icon">
+            @endauth
 
             <!--ドロップダウンメニュー-->
         <ul id="dropdown-menu" class="dropdown close">
