@@ -38,28 +38,28 @@
     <div id="side-bar">
   <div id="confirm">
 
-    <p class="username">{{ Auth::user()->username }}さん</p>
+    <p class="username">{{ Auth::user()->username }}さんの</p>
 
     <!-- フォロー数 -->
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="follow-count-row">
       <span>フォロー数</span>
       <span>{{ Auth::user()->follows()->count() }} 人</span>
     </div>
 
-    <div class="d-flex justify-content-end mt-2 mb-4">
-      <a href="{{ route('followList') }}" class="btn btn-primary">
+    <div class="follow-btn-area">
+      <a href="{{ route('followList') }}" class="side-btn">
         フォローリスト
       </a>
     </div>
 
     <!-- フォロワー数 -->
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="follow-count-row">
       <span>フォロワー数</span>
       <span>{{ Auth::user()->followers()->count() }} 人</span>
     </div>
 
-    <div class="d-flex justify-content-end mt-2 mb-3">
-      <a href="{{ route('followerList') }}" class="btn btn-primary">
+    <div class="follow-btn-area">
+      <a href="{{ route('followerList') }}" class="side-btn">
         フォロワーリスト
       </a>
     </div>
@@ -68,8 +68,8 @@
     <hr>
 
     <!-- ユーザー検索 -->
-    <div class="d-flex justify-content-center mt-3">
-      <a href="{{ url('users/search') }}" class="btn btn-primary">
+    <div class="search-btn-area">
+      <a href="{{ url('users/search') }}" class="side-btn">
         ユーザー検索
       </a>
     </div>
