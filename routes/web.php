@@ -49,6 +49,7 @@ Route::post('post/delete', [PostsController::class, 'destroy'])
 
 // 検索画面表示
 Route::get('users/search', [UsersController::class, 'search'])
+    ->name('users.search')
     ->middleware('auth');
 
 // 検索実行
@@ -90,8 +91,9 @@ Route::post('/unfollow/{id}', [FollowsController::class, 'unfollow'])
 |--------------------------------------------------------------------------
 */
 
+// プロフィール画面表示
 Route::get('/profile/{id}', [UsersController::class, 'show'])
-    ->name('profile')
+    ->name('profile.show')
     ->middleware('auth');
 
 // プロフィール編集画面表示

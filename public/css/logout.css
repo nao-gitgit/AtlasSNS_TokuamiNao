@@ -34,45 +34,83 @@ body {
     margin-top: 10px;
     font-weight: 300;
     letter-spacing: 1.5px;
-}
-
-/* 中央のカード部分 */
-.logout-container {
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 16px;
-    padding: 40px 50px;
-    width: 380px;
-    margin-top: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    color: white;
-    text-align: center;
-}
-
-/* ログイン・登録フォームの入力欄 */
-.logout-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 14px 0;
-    border-radius: 8px;
-    border: none;
-}
-
-/* ボタン */
-.logout-container button,
-.logout-container input[type="submit"] {
-    background: #e55353;
-    color: white;
-    border: none;
-    padding: 12x;
-    width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
     font-weight: bold;
-    margin-top: 20px;
 }
 
-.logout-container a {
+/* フォームカード */
+.logout-container {
+    width: 350px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.18);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* タイトル */
+.login-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: bold;
     color: white;
-    text-decoration: underline;
+}
+
+/* フォーム間隔 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* ラベル */
+.form-group label {
+    display: block;
     font-size: 14px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* 入力欄 */
+.input {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* ボタンエリア */
+.login-btn-area {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* ログインボタン */
+.login-btn {
+    width: 140px;
+    height: 40px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ホバー（見本に近づく） */
+.login-btn:hover {
+    opacity: 0.9;
+}
+
+/* 新規登録リンク */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.register-link a {
+    color: white;
+    text-decoration: none;
+    text-decoration: underline;
 }

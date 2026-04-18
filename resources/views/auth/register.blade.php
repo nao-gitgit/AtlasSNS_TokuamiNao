@@ -27,7 +27,7 @@
 {{ Form::label('password_confirmation','パスワード確認') }}
 {{ Form::password('password_confirmation',['class' => 'input']) }}
 
-{{ Form::submit('登録') }}
+{{ Form::submit('新規登録') }}
 
 <p><a href="login">ログイン画面へ戻る</a></p>
 

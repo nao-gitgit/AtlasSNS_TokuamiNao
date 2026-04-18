@@ -21,7 +21,7 @@
     <div class="post">
 
         <!-- アイコン -->
-        <a href="{{ route('profile', $post->user->id) }}">
+        <a href="{{ route('profile.show', $post->user->id) }}">
     <img src="{{ asset('storage/' . $post->user->icon_image) }}"
          class="post-user-icon">
         </a>

@@ -2,7 +2,7 @@
 
     <!-- 検索エリア -->
     <div class="search-area">
-        <form action="{{ url('users/search') }}" method="GET" class="search-form">
+        <form action="{{ route('users.search') }}" method="GET" class="search-form">
 
             <input
                 type="text"
@@ -36,7 +36,7 @@
             <div class="user-item">
 
                 <div class="user-left">
-                    <a href="{{ route('profile', $user->id) }}">
+                    <a href="{{ route('profile.show', $user->id) }}">
                     <img src="{{ asset('storage/' . $user->icon_image) }}"
                        alt="アイコン"
                        class="user-icon">
