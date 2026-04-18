@@ -33,6 +33,11 @@ class PostsController extends Controller
         // バリデーション
         $request->validate([
             'post' => ['required', 'string', 'min:1', 'max:150'],
+        ],[
+            'post.required' => '投稿は必須です',
+            'post.string' => '投稿は文字列形式で入力してください',
+            'post.min' => '投稿は1文字以上で入力してください',
+            'post.max' => '投稿は150文字以内で入力してください'
         ]);
 
         // 投稿を保存
@@ -51,6 +56,10 @@ class PostsController extends Controller
         // バリデーション
         $request->validate([
             'post' => ['required', 'string', 'min:1', 'max:150'],
+        ],[
+            'post.required' => '投稿は必須です',
+            'post.min' => '投稿は1文字以上で入力してください',
+            'post.max' => '投稿は150文字以内で入力してください'
         ]);
 
         // 編集対象の投稿を取得
