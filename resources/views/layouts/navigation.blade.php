@@ -1,7 +1,7 @@
 <div id="head">
     <!--Atlasロゴにトップページへ遷移するリンクを設置-->
     <h1>
-        <a href="{{ route('home') }}"> <img src="{{ asset('images/atlas.png') }}" alt="Atlas"> </a>
+        <a href="{{ route('home') }}"> <img src="{{ asset('images/atlas.png') }}" alt="Atlas" class="atlas-logo"> </a>
     </h1>
 
     <!--ユーザーメニュー-->
