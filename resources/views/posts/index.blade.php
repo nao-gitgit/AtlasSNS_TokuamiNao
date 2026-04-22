@@ -8,8 +8,10 @@
             <div class="post-area">
                 <!-- ユーザーアイコン -->
                 <a href="{{ route('profile.show', Auth::id()) }}">
-                <img src="{{ asset('storage/' . Auth::user()->icon_image) }}"
-                   class="post-user-icon">
+                <img src="{{ Auth::user()->icon_image
+                ? asset('storage/' . Auth::user()->icon_image)
+                : asset('images/icon1.png') }}"
+                class="post-user-icon">
                 </a>
 
                 <!-- 投稿入力欄 -->
@@ -40,8 +42,10 @@
 <div class="post">
     <!-- アイコン -->
     <a href="{{ route('profile.show', $post->user->id) }}">
-    <img src="{{ asset('storage/' . $post->user->icon_image) }}"
-         class="post-user-icon">
+    <img src="{{ $post->user->icon_image
+    ? asset('storage/' . $post->user->icon_image)
+    : asset('images/icon1.png') }}"
+    class="post-user-icon">
 </a>
 
     <div class="post-body">

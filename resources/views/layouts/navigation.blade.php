@@ -20,8 +20,8 @@
             <!--ユーザーアイコンを設置-->
             @auth
             <img src="{{ Auth::user()->icon_image
-                ? asset('storage/' . Auth::user()->icon_image)
-                : asset('images/default.png') }}"
+            ? asset('storage/' . Auth::user()->icon_image)
+            : asset('images/icon1.png') }}"
             class="header-icon">
             @endauth
 

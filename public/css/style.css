@@ -9,6 +9,7 @@ body {
         "Hiragino Sans",
         Meiryo,
         sans-serif;
+    min-height: 100vh;
 }
 
 /* ヘッダー */
@@ -238,6 +239,12 @@ header {
     background: transparent;
 }
 
+.error-message {
+    color: #f00;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
 .post-btn img {
     width: 35px;
     height: 35px;
@@ -296,7 +303,7 @@ header {
 
 .edit-modal {
     width: 65%;
-    margin: 30% auto 5% auto;
+    margin: 15% auto;
     padding: 40px 50px;
     border-radius: 15px;
     background: white;

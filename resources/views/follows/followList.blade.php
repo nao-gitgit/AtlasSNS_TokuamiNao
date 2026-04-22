@@ -9,9 +9,10 @@
         <div class="follow-icon-area">
             @foreach($followings as $user)
                 <a href="{{ route('profile.show', $user->id) }}">
-                    <img src="{{ asset('storage/' . $user->icon_image) }}"
-                         alt="アイコン"
-                         class="follow-icon">
+                    <img src="{{ $user->icon_image
+                    ? asset('storage/' . $user->icon_image)
+                    : asset('images/icon1.png') }}"
+                    alt="アイコン" class="follow-icon">
                 </a>
             @endforeach
         </div>
@@ -25,8 +26,10 @@
 
         <!-- アイコン -->
         <a href="{{ route('profile.show', $post->user->id) }}">
-            <img src="{{ asset('storage/' . $post->user->icon_image) }}"
-                 class="post-user-icon">
+            <img src="{{ $post->user->icon_image
+            ? asset('storage/' . $post->user->icon_image)
+            : asset('images/icon1.png') }}"
+            class="post-user-icon">
         </a>
 
         <div class="post-body">

@@ -7,8 +7,10 @@
 
         <!-- アイコン -->
         <div class="profile-icon-area">
-        <img src="{{ asset('storage/' . $user->icon_image) }}"
-             class="profile-icon">
+        <img src="{{ $user->icon_image
+        ? asset('storage/' . $user->icon_image)
+        : asset('images/icon1.png') }}"
+        class="profile-icon">
         </div>
 
         <div class="profile-info">
@@ -54,8 +56,10 @@
     @foreach ($posts as $post)
     <div class="post">
 
-        <img src="{{ asset('storage/' . $post->user->icon_image) }}"
-             class="post-user-icon">
+        <img src="{{ $post->user->icon_image
+        ? asset('storage/' . $post->user->icon_image)
+        : asset('images/icon1.png') }}"
+        class="post-user-icon">
 
         <div class="post-body">
             <div class="post-header">
