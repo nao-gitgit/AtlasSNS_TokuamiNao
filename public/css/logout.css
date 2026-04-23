@@ -78,7 +78,7 @@ body {
     box-sizing: border-box;
 }
 
-/* ボタンエリア */
+/* ログインボタンエリア */
 .login-btn-area {
     text-align: right;
     margin-top: 10px;
@@ -97,7 +97,6 @@ body {
     margin-right: 20px;
 }
 
-/* ホバー（見本に近づく） */
 .login-btn:hover {
     opacity: 0.9;
 }
@@ -115,25 +114,25 @@ body {
     text-decoration: underline;
 }
 
-/* タイトル少し上寄せ */
+/* ログインタイトル */
 .login-title {
     margin-bottom: 20px;
 }
 
 /* エラーメッセージ */
 .error-message {
-    color: #ffdddd;
+    color: #f00;
     font-size: 13px;
     margin-bottom: 15px;
 }
 
-/* フォーム全体コンパクト */
+/* ログインフォーム */
 .login-form {
     width: 300px;
     margin: 0 auto;
 }
 
-/* ボタン少し大きく */
+/* ログインボタン */
 .login-btn {
     width: 160px;
     height: 45px;
@@ -141,7 +140,49 @@ body {
     border-radius: 8px;
 }
 
-/* 入力欄ちょい丸く */
+/* 入力欄 */
 .input {
     border-radius: 8px;
+}
+
+/* added.blade専用 */
+.added-container {
+    text-align: center;
+}
+
+.added-username {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.added-welcome {
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.added-message p {
+    color: white;
+    margin: 5px 0;
+}
+
+.added-btn-area {
+    margin-top: 30px;
+}
+
+.added-btn {
+    display: inline-block;
+    width: 160px;
+    height: 45px;
+    line-height: 45px;
+    background: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.added-btn:hover {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
 }

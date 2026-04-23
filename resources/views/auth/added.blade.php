@@ -1,12 +1,19 @@
 <x-logout-layout>
 
-  <div id="clear">
-    <p>{{ $username }}さん</p>
-    <p>ようこそ!AtlasSNSへ</p>
+  <div class="added-container">
+
+    <p class="added-username">{{ $username }}さん</p>
+    <p class="added-welcome">ようこそ! AtlasSNSへ</p>
+
+    <div class="added-message">
     <p>ユーザー登録が完了いたしました。</p>
     <p>早速ログインをしてみましょう!</p>
+    </div>
 
-    <p class="btn"><a href="login">ログイン画面へ</a></p>
+    <div class="added-btn-area">
+    <a href="login" class="added-btn">ログイン画面へ</a></p>
+    </div>
+
   </div>
 
 </x-logout-layout>
