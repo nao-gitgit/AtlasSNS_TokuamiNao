@@ -8,7 +8,10 @@
 <div class="profile-edit-row">
 
 <div class="icon-area">
-<img src="{{ asset('storage/' . $user->icon_image) }}" class="edit-icon">
+<img src="{{ $user->icon_image === 'icon1.png'
+? asset('images/icon1.png')
+: asset('storage/' . $user->icon_image) }}"
+class="edit-icon">
 </div>
 
 <div class="edit-form">

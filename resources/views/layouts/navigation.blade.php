@@ -19,9 +19,9 @@
 
             <!--ユーザーアイコンを設置-->
             @auth
-            <img src="{{ Auth::user()->icon_image
-            ? asset('storage/' . Auth::user()->icon_image)
-            : asset('images/icon1.png') }}"
+            <img src="{{ $user->icon_image === 'icon1.png'
+            ? asset('images/icon1.png')
+            : asset('storage/' . $user->icon_image) }}"
             class="header-icon">
             @endauth
 

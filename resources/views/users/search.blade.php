@@ -13,7 +13,9 @@
             >
 
             <button type="submit" class="search-btn">
-                <img src="{{ asset('images/search.png') }}" alt="検索">
+                <img src="{{ $user->icon_image === 'icon1.png'
+                ? asset('images/icon1.png')
+                : asset('storage/' . $user->icon_image) }}" alt="検索">
             </button>
 
         </form>
@@ -37,7 +39,9 @@
 
                 <div class="user-left">
                     <a href="{{ route('profile.show', $user->id) }}">
-                    <img src="{{ asset('storage/' . $user->icon_image) }}"
+                    <img src="{{ $user->icon_image === 'icon1.png'
+                       ? asset('images/icon1.png')
+                       : asset('storage/' . $user->icon_image) }}"
                        alt="アイコン"
                        class="user-icon">
                     </a>
