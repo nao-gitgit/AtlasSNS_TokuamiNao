@@ -8,9 +8,9 @@
             <div class="post-area">
                 <!-- ユーザーアイコン -->
                 <a href="{{ route('profile.show', Auth::id()) }}">
-                <img src="{{ $user->icon_image === 'icon1.png'
+                <img src="{{ Auth::user() ->icon_image === 'icon1.png'
                 ? asset('images/icon1.png')
-                : asset('storage/' . $user->icon_image) }}"
+                : asset('storage/' . Auth::user() ->icon_image) }}"
                 class="post-user-icon">
                 </a>
 
@@ -42,9 +42,9 @@
 <div class="post">
     <!-- アイコン -->
     <a href="{{ route('profile.show', $post->user->id) }}">
-    <img src="{{ $user->icon_image === 'icon1.png'
+    <img src="{{ $post->icon_image === 'icon1.png'
     ? asset('images/icon1.png')
-    : asset('storage/' . $user->icon_image) }}"
+    : asset('storage/' . $post->icon_image) }}"
     class="post-user-icon">
 </a>
 
