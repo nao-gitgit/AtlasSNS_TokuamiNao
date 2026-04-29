@@ -13,9 +13,7 @@
             >
 
             <button type="submit" class="search-btn">
-                <img src="{{ Auth::user() ->icon_image === 'icon1.png'
-                ? asset('images/icon1.png')
-                : asset('storage/' . Auth::user() ->icon_image) }}" alt="検索">
+                <img src="{{ asset('images/search.png') }}" alt="検索">
             </button>
 
         </form>
